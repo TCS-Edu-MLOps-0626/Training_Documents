@@ -1,0 +1,271 @@
+TCS MLOps Training
+
+Start Date: 23rd July 2026
+
+######################
+Day 1: 23rd July 2026
+######################
+
+	i. Intro.
+	ii. LMS Portal 
+	iii. Topic Intro.
+	
+	Lab Environment :::	
+		
+	- Create free tier account on AWS 
+	
+		- VMs --> Install all the required MLOps Tools 
+		
+	- Tools: 
+			
+	- Lab Requirements:
+	
+			1. Create a free tier account on AWS Cloud  		# EC2 Service to create Virtual Machines 
+			
+				- https://aws.amazon.com/console/
+				
+				- https://aws.amazon.com/resources/create-account/
+				
+					- Active Email_ID 
+					- Active Mobile Number 
+					- Active Credit/Debit Card Number enable with International Transaction
+					
+					- PAN Card Number
+					
+				- Login to AWS Management Console using root_user_id(Email_ID) & password
+					- Create MFA - Two-way Authentication 
+					
+						- Install google authenticator App on your mobile phone
+						
+				- Create AWS EC2 Instances - Virtual Machines (Lab Environments)
+				
+			2. GitHub Account 	# Used to maintain the Remote Repositories(Files & Folders).
+				
+				- https://github.com/
+				
+				- 
+
+					
+					
+			3. DockerHub Account
+			
+				- https://hub.docker.com/  # Create using existing Github 
+				
+					
+			4. Install Visual Studio Code on Local Machine 	- Develop the Source Code.
+				
+				- https://code.visualstudio.com/download	
+				
+			
+			5. Install git client on Local Machine
+			
+				- https://git-scm.com/install/
+			
+				- Version Control System
+				
+					- Distributed VCS 
+					
+						- Remote Repositories 	- Setup Github Account & Create Remote Repositories 
+						
+						- Local Repositories	- Install Git Client on Local Machine
+												- https://git-scm.com/install/windows
+													- Choose Standalone Installer 
+														- Git for Windows/x64 Setup.
+															- Run this Exec. with the default option
+															
+													- GIT BASH	# Based on Linux Users
+													- GIT CMD	# Based on Window Users
+													- GIT GUI
+
+
+												- Open Git Bash Terminal 
+													- git --version
+													
+			6. Install MobaXTerm/Putty on Local Machine - Windows Users
+			
+				- SSH Agent to connect to Remote Servers.
+				
+				- https://mobaxterm.mobatek.net/download-home-edition.html  
+					# Choose Installer Edition.
+					# Right click & Extract 
+					# Goto to the Folder & Run the Exec.
+							
+	
+	
+	
+	
+	
+	
+	1. MLOps Essentials :::
+	
+	What is DevOps?
+	
+	
+	SDLC : Software Development LifeCycle :::
+	
+	- Requirement Analysis 
+	- Design 
+	- Development 
+	- Test 
+	- Implement to Prod 
+	- Monitor/Maintain 
+	
+	
+	- Web / Mobile / Desktop / Embedded Application 
+		
+		Desktop Application :
+			- Super Market billing System 
+				- Functions/Modules:
+						- Create UI 
+						- Inventory
+						- Billing 
+						- Payment 
+							- Cash/Card payment 							
+							- ++ Online / UPI 
+					
+	
+	- Waterfall Model :
+		- Linear in fashion 
+		- Top-Down Approach 
+		- Meant Monolith Application Architecture 
+		
+Main Project : 			12 Months
+	
+	- Requirement Analysis 
+	- Design 
+	- Development 
+	- Test 
+	- Implement to Prod 
+	- Monitor/Maintain	
+	
+	
+Enhancement Project : 			
+	
+	- Requirement Analysis 
+	- Design 
+	- Development 
+	- Test 
+	- Implement to Prod 
+	- Monitor/Maintain	
+
+
+
+AGILE Methodologies :
+	- Used to bring agility to the process.
+	- Functions/Modules -> Iterations 
+
+
+		Desktop Application :
+			- Super Market billing System 
+				- Functions/Modules:
+						- Create UI 
+						- Inventory
+						- Billing 
+						- Payment 
+							- Cash/Card payment 							
+							- ++ Online / UPI 
+							
+Iteration 1: Create UI 
+							
+	- Requirement Analysis 
+	- Design 
+	- Development 
+	- Test 
+	- Implement to Prod with proper approvals
+	- Monitor/Maintain  
+	
+Iteration 2: Inventory
+							
+	- Requirement Analysis 
+	- Design 
+	- Development 
+	- Test 
+	- Implement to Prod with proper approvals
+	- Monitor/Maintain  	
+	
+	
+	
+nth Iteration : - ++ Online / UPI 
+							
+	- Requirement Analysis 
+	- Design 
+	- Development 
+	- Test 
+	- Implement to Prod with proper approvals
+	- Monitor/Maintain 	
+	
+	
+	Using AGILE Methodologies;
+	
+		- We can able to achieve: 
+		
+			- Continuous Development 
+			- Continuous Integration
+			- Continuous Testing 
+			- Continuous Delivery 
+				- Is used to release the changes to production environment with manual approvals
+			
+		- We cannot achieve:
+		
+			- Continuous Deployment 
+				- Is used to release the changes to production environment without any manual approvals	
+				
+				
+	- DevOps ::::
+	
+		DevOps is a Software Development strategy/process, it helps to build the collaboration between the teams like Development Team and Operations Teams which helps to achieve Continuous Development, Continuous Integration, Continuous Testing, Continuous Delivery, Continuous Deployment and Continuous Monitoring in more automated fashion.
+		
+	- How to Implement DevOps? 
+		
+		- Teams involved in the process of SDLC
+			
+			DevOps/MLOPs Team :
+			
+				- Infra-Structure Management Team 
+				- Application Deployment Team 
+				- Testing Team 
+				- Release Management Team 
+				- Production Support / monitoring Team 
+				- IT Security 
+				- Data Scientist/Analyst
+				- ML Engineers
+				
+		- Stages of DevOps :
+		
+			Continuous Development, Continuous Integration, Continuous Testing, Continuous Delivery, Continuous Deployment and Continuous Monitoring.
+			
+			
+	
+	- Git - Version Control System :
+	
+		- It is an open-source Distributed Version Control System
+		
+		- Used to perform parallel development 
+		
+		- Used to track the source changes. 
+		
+	 - Git CLI Commands :::
+	 
+	 - Install Git on Local Machine 
+	 
+	 - Install VS Code.
+	 
+	
+Next: 
+
+	- Install git on local machine :
+	
+	- Essentials Git Cli Commands.
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
