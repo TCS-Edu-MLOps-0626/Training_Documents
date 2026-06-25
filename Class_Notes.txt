@@ -257,8 +257,513 @@ Next:
 	
 	- Essentials Git Cli Commands.
 	
+
+######################
+Day 2: 24th July 2026
+######################	
+		
+	Roles & Responsibilities :::
+	
+		Data Scientists 
+			
+			-> Procure Data, Process Data and Version Control Datasets (External Storage Server/S3/EBS/Az_Disk)
+			
+			-> E_COmmerce Portal :
+				- www.amazon.com
+		
+		ML Engg.
+		
+			-> Create ML Model, Train, Register
+		
+		MLOPs Team ::::
+		
+			-> Automate end-to-end ML Model/Project Build, Test and Deployment & Monitoring
+			
+			Tools :::
+			
+				- git, github 			==> Version Control/Track the Source Code Changes 
+				
+				- DVC 					==> Version Control/Track the Dataset to train the model
+				
+				- Python 					
+					- Streamlit			==> Web Application Framework -> ML Project
+											- Web User Interface 
+											
+					- Fast API 			==> Develop the API used in the Model
+					
+				- MLFlow				==> To Experiment the Model
+				
+				- Docker 				==> Containerize the ML Model and its dependencies
+				
+				- DockerHub 			==> Register the ML Model Container Images 
+				
+				- AWS 
+					- AWS EC2 Instances ==> Setup - Dev, Build & Target Environment
+					
+					- AWS S3 Service 	==> To Maintain the Input Dataset & Model Artifacts
+					
+				- Kubernetes			==> To deploy the Model
+					(using Kubeadm/K3s/KIND/Minikube)
+					
+				- Kubeflow 				==> Extension to Kubernetes to Automate ML Workflow on Kubernetes
+				
+				- Monitoring 
+					- Prometheus Grafana ==> Infra-Structure Monitoring
+					- MLflow 			 ==> Model Monitoring
+					
+				- github-actions		
+										==> To Create end-to-end cicd pipeline to automate the Build and Deployments of ML Model
+																				
+				- AWS Sagemaker-AI 		==> Fully Managed ML Service - With a Use Case.
+	
+	
+	
+	- git, github 			==> Version Control/Track the Source Code Changes 	
+	
+	- Git - Version Control System :
+	
+		- It is an open-source Distributed Version Control System
+		
+		- Used to perform parallel development 
+	
+		- Used to track the source changes. 	
+	
+	- Working with Git ::::
+	
+		- Install git on local machine(Dev Environment) :
+				-> https://git-scm.com/install/
+				-> https://git-scm.com/install/
+		- Essentials Git Cli Commands.	
+		
+		
+		
+		https://git-scm.com/install/linux	
+		
+			-> Choose:  Git for Windows/x64 Setup.
+			
+				- GIT BASH 
+				- GIT use more basic git bash.
+				
+			-> MAc Users- Open the Terminal - Check the applications already installed 
+				# git --version
+			
+			
+	- Git file workflow :::
+	
+	--->>> Distributed Version Control System
+		
+	Local Machine (Install git client)												Remote Server 
+	
+	Working Directory			Staging Area			Local Repository 				Local Repository
+		
+		index.html	  ----------> 	index.html -----------> Deployed					Remote Repository.
+						git cli					Streamlit
+						git add 
+	
+	
+	
+	Project Workspace 
+	- App Components, Which bound to the project - Streamlit/FastAPI Code 
+	
+	
+	- Misc. Git cli commands :::
+		- Git Cli Commands
+		
+		
+	- git init 				# To initialize the empty git repository 
+							$ It create default branch(master/Conroller)
+							$ Version controll the appliation components.
+		
+	- ls 					# Based on OS
+	
+	- git ls-files 			# To get the list of files that are being tracked by git 
+	
+	
+	git add :
+	
+		git add file1.txt
+
+		git add *.java 
+		
+		git add *.md f1.txt 
+		
+		git add .				# '.' denotes all files form working directory
+		'
+		
+		
+	- UnStage:::
+	
+		Undo 
+		
+		
+		
+	- git status
+	
+	- git log :::
+	
+		git log 
 	
 		
+	
+	- Daily changes 
+							
+							
+							
+	- Manage the Repos:
+	
+		cd d:
+		
+
+	- Working with .gitignore file
+		
+	- GIT-IGNORE :::
+
+		- Used to ingnore the files from tracking
+		- git ignore should be the verify first commit
+		
+		
+		
+		Project foler :
+		
+			- src 
+			- test 
+			- appliation.properties 
+			- dev_cnfig
+			
+		git_ignore appliation.properties
+			
+			
+		
+Next :::
+	
+	- .gitignore - best practices 
+	- using .gitignore along with DVC 	
+	- Git Branching Techniques/Strategies
+	- Work with Remote Repositories
+		
+######################
+Day 3: 25th July 2026
+######################	
+
+	- Continue with GIT - VCS 
+
+	- .gitignore - best practices 
+	- using .gitignore along with DVC 	
+	- Git Branching Techniques/Strategies
+	- Work with Remote Repositories		
+
+
+	ML_project_Workspace 
+	
+		*.py 
+		*.py 
+		*.app_Config
+		ml_data_v1.csv 
+		DB_credential.json
+
+	- GIT-IGNORE :::
+
+		- Used to ingnore the files from tracking
+		- git ignore should be the verify first commit		
+		
+	Local Machine 
+	
+	Working Directory 			----->			Staging Area 		---->		Local Repo 		-->  Remote Repo
+		
+	ML_project_Workspace 
+	
+		*.py 
+		*.py 
+		*.app_Config
+		ml_data_v1.csv 
+		DB_credential.json				
+			
+			
+	
+			
+			
+		.gitignore 
+		
+		
+	vi .gitignore 
+	
+	ml_data_v1.csv 
+    DB_credential.json
+	
+	commit 
+	
+	
+	git status 
+	
+	add 
+		
+				
+Undo the Commited Changes :::
+
+	- git reset ::::
+
+
+
+		- GIT RESET ::
+		
+	
+		git reset is used to undo the changes from the repository
+		git reset will reset the commit point to the previous commit point 
+		git reset will not create any new commit point for track purpose 
+		
+		git reset is not recommended in the shared repository 
+	
+	
+		Syntax :		
+			- git reset <reset_option> <previous_Commit_ID>	
+
+		Reset Options ::
+		
+			git reset --soft <previous_Commit_ID> :::
+				- git reset will reset the HEAD pointer to the previous commit point.
+				- It will take the changes back to staging area 
+				- The Changes will be available in staging area and working directory					
+		
+			git reset --mixed <previous_Commit_ID> :::		# Default
+				- git reset will reset the HEAD pointer to the previous commit point.
+				- It will take the changes back to working directory 
+				- The Changes will be available only in working directory			
+			
+			git reset --hard  <previous_Commit_ID> :::
+				- git reset will reset the HEAD pointer to the previous commit point.
+				- It will permanently delete the files from the system 		
+				
+				
+		Repo1:
+		
+			master :
+			
+				c5			Latest Commit --> HEAD
+				c4
+				c3
+				c2
+				c1
+				
+				
+			git reset --soft c4
+			
+				c4			Latest Commit --> HEAD
+				c3
+				c2
+				c1				
+				
+				
+			git reset --hard c1
+
+				c1			Latest Commit --> HEAD
+			
+
+	ML_Project:
+	
+		Data_Analysis ==> ETL 	--> every Hour
+		
+			Data Extraction ==> Raw data -> Repo1 :
+			
+												master : initial_commit,cm1
+												
+			Data Transformation/Processing 	--> 	Data_v1
+
+			Load to Dataset/Database 		--> 	Data_v1
+			
+													git reset --hard initial_commit
+													
+													
+	
+
+	Git Revert ::
+	
+	git revert :::
+	
+		- Git Revert is same as git reset --hard option 		
+		- git revert is used to undo a specific commit 		
+		- git revert will create a new commit point for tracking purpose.		
+		- git revert will maintain the commit history		
+		- git revert is recommended in shared repositories
+		
+		Syntax ::
+			git revert <specific_Commit_ID>		
+					c5
+					c4
+					c3 
+					c2
+					c1 
+													
+
+	-> Git Branching Techniques/Strategies ::::
+	
+	Git Branches ::
+	
+	-> Logical Copy of a Repo (default Branch)
+	-> Perform Parallel Development
+	
+		Repo1
+		
+			master : cm1 		# Prod version 
+						cm1,f1cm1,f1cm2,f1cm3,......
+			
+				feature1: cm1 
+							cm1,f1cm1,f1cm2,f1cm3,......
+							
+							
+	-> Git Branching Strategies :
+	
+	
+	Scenario1 :
+	
+		Repo1:		
+			master: cm1 
+					cm1,cm2				# cm2 - upon merging feature1 Changes 
+			
+				feature1: cm1 
+						cm1,f1cm1,f1cm2
+						
+	Scenario2 :
+	
+		Repo1:
+			master: cm1
+						cm1,cm2 ( # cm2 - Changes merged from Developer_Branch)
+			
+				Developer_Branch : cm1
+									cm1,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3
+			
+					feature1: cm1
+								cm1,f1cm1,f1cm2,f1cm3
+				
+					feature2: cm1 
+								cm1,f2cm1,f2cm2,f2cm3
+			
+			
+	Scenario3 :
+	
+		Repo1:
+			master: cm1
+						cm1,cm2 ( # cm2 - Changes merged from Integration_Branch)
+				Integration_Branch : cm1					
+									cm1,Developer1_Changes,Developer2_Changes				
+					Developer1_Branch : cm1
+										cm1,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3				
+						feature1: cm1
+									cm1,f1cm1,f1cm2,f1cm3					
+						feature2: cm1 
+									cm1,f2cm1,f2cm2,f2cm3	
+
+					Developer2_Branch : cm1
+										cm1,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3				
+						feature1: cm1
+									cm1,f1cm1,f1cm2,f1cm3					
+						feature2: cm1 
+									cm1,f2cm1,f2cm2,f2cm3
+	
+	
+	Scenario4 :
+	
+		Repo1:
+			master: cm1
+						cm1,cm2 ( # cm2 - Changes merged from Release_Branch)
+						
+				Release_Branch : cm1,Team1_Changes,Team2_Changes 
+						
+					Integration1_Branch : cm1												# Team1				
+										cm1,Developer1_Changes,Developer2_Changes				
+						Developer1_Branch : cm1
+											cm1,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3				
+							feature1: cm1
+										cm1,f1cm1,f1cm2,f1cm3					
+							feature2: cm1 
+										cm1,f2cm1,f2cm2,f2cm3	
+
+						Developer2_Branch : cm1
+											cm1,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3				
+							feature1: cm1
+										cm1,f1cm1,f1cm2,f1cm3					
+							feature2: cm1 
+										cm1,f2cm1,f2cm2,f2cm3
+			
+					Integration2_Branch : cm1												# Team2			
+										cm1,Developer1_Changes,Developer2_Changes				
+						Developer1_Branch : cm1
+											cm1,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3				
+							feature1: cm1
+										cm1,f1cm1,f1cm2,f1cm3					
+							feature2: cm1 
+										cm1,f2cm1,f2cm2,f2cm3	
+
+						Developer2_Branch : cm1
+											cm1,f1cm1,f1cm2,f1cm3,f2cm1,f2cm2,f2cm3				
+							feature1: cm1
+										cm1,f1cm1,f1cm2,f1cm3					
+							feature2: cm1 
+										cm1,f2cm1,f2cm2,f2cm3
+
+
+	Hot-fix Branch / Adhoc Branch :
+	
+		Repo1:
+			master: cm1
+						cm1,cm2 ( # cm2 - Changes merged from Release_Branch)
+						
+				Bugfix_Branch : cm1
+								cm1,bf1,bf2,bf3
+								
+					Ensure that the lower branches are in-sync with the latest master branch changes.		
+					
+
+			
+	Create Branch ::
+	
+		git branch 							# get the list of branches 
+		
+		git branch <new_branch_name>		# To Create new branch 
+		
+		git switch -c <new_branch_name>		# To Create new branch & switch the control to New branch
+		
+		git switch <existing_branch_name>	# To Switch to any specific branch
+
+	
+	
+		Repo1
+			master: cm1 
+			
+				feature1: cm1 
+							cm1,f1cm1
+							
+			git switch master 
+			
+			git merge feature1				# Should be executed from the target branch
+							
+	
+	Merge Conflict:
+	
+		- When more than one user/feature try to update a file at the same record level, wi get the merge conflict.
+		
+		
+	Resolve Merge Conflicts:
+	
+		- Identify the file(s) causing the issue.
+		
+		- Read and Review the file content.
+		
+		- Based on review, update the file, by removing the extra header and footer notes.
+		
+		- Save, Add and Commit the changes. 
+		
+		
+	DevOps/MLOps perspective: 
+	
+		- Never fix the merge conflict, instead, always try to prevent Merge Conflict.
+		
+		
+Next ::::
+
+	Git Techniques to prevent the Merge Conflicts on Target Branch :::	
+	
+		- Rebase 
+		- Squash 
 	
 	
 	
