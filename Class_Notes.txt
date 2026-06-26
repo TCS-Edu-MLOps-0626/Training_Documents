@@ -766,7 +766,89 @@ Next ::::
 		- Squash 
 	
 	
+######################
+Day 4: 26th July 2026
+######################	
+
+	Git Techniques to prevent the Merge Conflicts on Target Branch :::	
 	
+		- Rebase :::
+			
+			- Used to maintain the Linear Commit History 
+			- Used to prevent the merge conflicts on the target branch 
+			- Used to Keep the current branch in sync with the target branch 
+			
+			- As a best practice, it is always recommended to used rebase before merge the changes to target branch.
+			
+			
+		git rebase <target_branch_name>
+		
+		
+		Repo1 
+		
+			master: cm1 
+			
+						cm1,f1cm1,f1cm2,f1cm2,f2cm,f2cm2,f2cm2						
+						
+			
+				feature1: cm1 
+							cm1,f1cm1,f1cm2,f1cm2 
+				
+				feature2: cm1 
+							cm1,f2cm,f2cm2,f2cm2
+
+							git rebase feature1
+							
+							cm1,f1cm1,f1cm2,f1cm2,f2cm,f2cm2,f2cm2
+
+
+							
+							git switch master 
+							
+							
+							git merge feature2
+			
+			
+		- Squash :::
+		
+		
+			- To Combine more than one commits into single commit point on the target branch.
+		
+			git merge feature1
+		
+			git merge --squash feature1
+			
+			
+			Repo1: 
+			
+				master: cm1
+				
+						cm1,f1cm1,f1cm2,f1cm3,4,5,6,7,8,9,................,200+
+				
+					feature1: cm1 
+							cm1,f1cm1,f1cm2,f1cm3,4,5,6,7,8,9,................,200+
+							
+							
+						git switch master 
+						
+						//git merge feature1 
+						
+						git merge --squash feature1 
+			
+							git commit -m <squashed merge!>
+			
+			
+			
+	- git cherry-pick :::
+	
+			- Used to merge the specific commit to the target branch 
+			- As per the process, cherry-pick is not recommended to use.
+			
+			
+		git chery-pick <specific_Commit_ID >
+		
+		
+		Eg.: git cherry-pick <cm1> <cm5>	
 	
 	
 	
