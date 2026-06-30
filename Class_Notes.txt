@@ -885,3 +885,149 @@ Day 5: 30th June 2026
 	
 	- DVC Pipelines 
 
+
+######################
+Day 5: 30th June 2026
+######################	
+
+	Work with Remote Repositories ::::
+	
+		- clone 
+		- push 
+		- fetch
+		- pull
+		
+		
+	GITHUB:::
+
+		-> Enhancement/Bugfix Project 	==> Working with existing Remote Repo.
+		
+		-> New Project 
+		
+		
+		GITHUB Remote Repositories:
+		
+		
+		- Create Remote Repository
+		- Create Commits 
+		- Create Remote Branches 
+		- Merge - Pull Request
+		
+		
+		Git Cli Commands :::
+			
+			git clone 		-> To Copy/Clone the entire remote repository to Local Machine
+			
+			git add 		-> To Add the changes from working directory to staging area 
+			
+			git commit 		-> To Commit the changes from staging area to local repository
+			
+			git push		-> To Push the changes from local Repository to Remote Repository
+		
+			git fetch/pull :
+			
+				-> Both Git fetch and pull are used handle the incremental changes from remote repository.
+				
+				Git fetch :
+				
+					- It is used to just check for the incremental changes from remote repository, if any incremental changes exist, it will update the details of the changes only in local repository. Git fetch will never Update the Working Directory.
+					
+					- Do explicit merge to update the Working Directory					
+					
+			
+				git Pull :
+				
+					- It is used to check for the incremental changes from remote repository, if any incremental changes exist, it will update the details of the changes in local repository as well as in the Working Directory.
+					
+					git pull => git fetch + git merge 
+					
+					To keep the local repo in sync with remote repo.
+					
+		
+		- git remote -v
+		
+		- git remote add origin1 https://github.com/TCS-Edu-MLOps-0626/Test_Remote_Repo1.git
+		
+		- git remote remove origin1
+		
+		
+		
+	- git clone <remote_repository_URL>
+	
+		git clone https://github.com/TCS-Edu-MLOps-0626/Test_Remote_Repo1.git
+		
+		
+		Create PAT on GitHub .
+		
+			
+		- 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	AWS cloud: 
+	
+	- IAM User,Groups,Policies,Roles
+	
+		- Identity & Access Management Service :
+		
+			- User Authentication	# Who can access the resource?
+			
+			- User Authorization 	# What action can be performed?
+			
+		- RBAC : Role Based Access Control 
+			
+			root user -> Admin --> Overall Account.
+			
+			Create IAM User for any Project 
+			
+			
+			Users 
+						
+			Groups 
+			
+			Roles 			==> Create IAM Role and assign to EC2 Instance to access s3  bucket.
+			
+			Policies
+			
+			
+			
+	
+	- AWS S3 Bucket 
+	
+	
+	MLOps Packaging ::
+	
+	- Setup MLOps Build Server 
+	
+	
+	MLOps Workflow:::
+	
+	1. DVC ::: 
+	
+		- DVC Workflow 
+		
+		- DVC Pipelines 
+
+		- Mlflow 
+		
+		
+		
+	2. Kubeflow Pipelines :::	
+	
+	3. GitHub-Action - CICD :::
+	
+	4. AWS Sagemaker AI :::
