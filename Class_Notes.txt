@@ -1,9 +1,9 @@
 TCS MLOps Training
 
-Start Date: 23rd July 2026
+Start Date: 23rd June 2026
 
 ######################
-Day 1: 23rd July 2026
+Day 1: 23rd June 2026
 ######################
 
 	i. Intro.
@@ -257,9 +257,8 @@ Next:
 	
 	- Essentials Git Cli Commands.
 	
-
 ######################
-Day 2: 24th July 2026
+Day 2: 24th June 2026
 ######################	
 		
 	Roles & Responsibilities :::
@@ -442,7 +441,7 @@ Next :::
 	- Work with Remote Repositories
 		
 ######################
-Day 3: 25th July 2026
+Day 3: 25th June 2026
 ######################	
 
 	- Continue with GIT - VCS 
@@ -664,6 +663,7 @@ Undo the Commited Changes :::
 	
 		Repo1:
 			master: cm1
+			
 						cm1,cm2 ( # cm2 - Changes merged from Release_Branch)
 						
 				Release_Branch : cm1,Team1_Changes,Team2_Changes 
@@ -764,10 +764,9 @@ Next ::::
 	
 		- Rebase 
 		- Squash 
-	
-	
+		
 ######################
-Day 4: 26th July 2026
+Day 4: 26th June 2026
 ######################	
 
 	Git Techniques to prevent the Merge Conflicts on Target Branch :::	
@@ -848,11 +847,41 @@ Day 4: 26th July 2026
 		git chery-pick <specific_Commit_ID >
 		
 		
-		Eg.: git cherry-pick <cm1> <cm5>	
+		Eg.: git cherry-pick <cm1> <cm5>
+			
+			
+Next:::
+		
+	Work with Remote Repositories	
+	
+		- clone 
+		- push 
+		- fetch
+		- pull
+		
+		
+	DVC ::: 
+	
+	- DVC Workflow 
+	
+	- DVC Pipelines 
 	
 	
+######################
+Day 5: 30th June 2026
+######################	
+
+	Work with Remote Repositories ::::
 	
+		- clone 
+		- push 
+		- fetch
+		- pull
+		
+		
+	DVC ::: 
 	
+	- DVC Workflow 
 	
-	
-	
+	- DVC Pipelines 
+
