@@ -1461,6 +1461,38 @@ Disappointed with the overall experience,negative
 #************************************************************************************************************************
 
 
+Workflow ::::	
+
+	Phase 1:
+	
+	1. DVC is used to manage the Input Dataset for Model Training 
+	
+	2. dvc repro 		# Reproduce  ==> Train the Model # Trigger DVC Pipeline --> Data Validation - Process Data - Train 
+						# dvc.yaml
+						# dvc repro command is used to execute dvc pipeline
+
+	3. Trained Model ==> ML Artifacts ==> model.joblib / pickle 
+	
+	4. Used DVC to maintain the Artifacts - S3 
+
+
+	Phase 2:
+	
+	5. Use that artifacts and dependencies to create Dockerfile and create Docker Image 
+	
+	6. Publish Docker Image to Container Registry
+	
+	7. Deploy to Kubernetes 
+	
+	
+	Phase 3:
+	
+	8. Automate Build and Deployment to Kubernetes using github-actions workflow--> CI/CD Pipeline
+	
+	9. Monitor using Kubeflow(Deployment & Monitor) MLFlow / Prometheus / Grafana 
+	
+	10. Explore MLOps on AWS Cloud using AWS Sagemaker-AI
+
 
 ######################
 Day 8: 14th July 2026
