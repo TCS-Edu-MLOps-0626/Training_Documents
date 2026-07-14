@@ -1459,3 +1459,200 @@ Disappointed with the overall experience,negative
 
 
 #************************************************************************************************************************
+
+
+
+######################
+Day 8: 14th July 2026
+######################
+
+	- Packaging the ML Model using Docker 
+	
+	- Deploy the Packaged ML Model using Kubernetes
+	
+	- Containerization :::
+	
+		- It is a process of Packaging the Application with all its' dependencies.
+		
+	- Virtual Machine:
+	
+		-> VMs are the Hardware Level Virtualization
+		-> VMs are created using Hypervisor
+		-> VMs are used to execute the Operating Systems and Application/Tasks
+		-> VMs will be up and running even if there is no Active Application/Tasks.
+		-> VMs consume more Time and Space to start the Application/Tasks
+		
+	- Container: 
+	
+		-> Containers are the OS Level Virtualization
+		-> Containers are created using Container Engine(Docker)
+		-> Containers are used to execute the Application/Tasks. NOT Operating System.
+		-> Containers will immediately goes to exit state if there is no Active Application/Tasks.
+		-> Containers consume less Time and Space to start the Application/Tasks 
+		
+		
+	- Terminologies:
+	
+		- Container Engine :	- To Create/Manage the Container Images and Containers 
+								- Docker Container Engine 
+		
+		- Container Images :	
+			- It is a static file(Non-Executable) that define the application properties, and the dependencies to create container 
+			- It composed of various Layers of Instructions.
+			- It is created using Dockerfile.
+			
+		- Containers		:	
+			- Container are the executable units of the Container Images
+			
+		- Container Registry:
+			- Used to Version Control and Maintain the Container Images 
+			- Using DockerHub 
+
+
+			github 						S3/Artifactory Libraries				DockerHub
+			
+			Source_Code 				Artifacts 								Application Image 
+			mywebapp.py_v1.0	==>		mywebapp.pkl_v1.0				==> 	mywebapp_image:v1.0
+			mywebapp.py_v1.1	==>		mywebapp.pkl_v1.1				==> 	mywebapp_image:v1.1	
+
+		- Container Repositories:
+			- Sub-Set of Container Registry
+			
+		
+	Open-Source DevOps Tools:
+	
+		- Docker 
+	
+	Managed Services:
+	
+		AWS 	- ECS,ECR,EKS
+		Azure	- ACS,ACR,AKS 
+		GCP 	- GCE,GCA,GKE
+			
+	- Working with Docker:
+	
+	- Install Docker:			# https://docs.docker.com/engine/install/ubuntu/
+	
+		- sudo -i 
+		
+		- apt install docker.io 				# install it on the Build Server.
+		
+		
+	- Working with Docker CLI Commands.
+
+
+			- docker images 	# To get the list of All Images present in the local system.
+		
+			- docker ps 		# To get the list of Active Containers
+		
+			- docker ps -a 		# To get the list of Active & Inactive Containers
+		
+		
+			- docker pull		# Just Download Container Image from Container Registry 
+			
+				docker pull <image>:<tag>
+
+				docker pull <image>			# Always pull the latest version of the images 
+				(or)
+				docker pull <image>:latest
+				
+				
+			- docker run 		# To Create and Execute the Docker Container
+			
+				- docker run <image_name>
+				
+				
+				- docker run ubuntu 
+				
+				
+				- docker run ubuntu sleep 20
+				
+				
+				
+			- Modes of Container Execution:
+			
+				- Foreground / Attached Mode :::		#Default 
+					
+					Eg.:
+					
+						- docker run ubuntu sleep 20
+						
+				- Background / Detached Mode :::
+				
+					Eg.: 
+						- docker run -d ubuntu sleep 20
+						
+				- Interactive Mode:
+				
+					Eg.: 
+					
+						- docker run -it ubuntu bash
+						
+			
+			- Start Container:
+
+				- docker start <existing_container_id>
+				
+		
+			- Login to the running Container 
+			
+				- docker exec -it <existing_container_id> bash 
+				
+				- exit		# Just to Log-off 
+				
+			- Stop Container:
+
+				- docker stop <existing_container_id> 
+				
+			
+					
+			- Remove Container :
+			
+				docker rm <existing_container_id>
+				
+				docker rm $(docker ps -aq)
+				
+			- Remove Image :
+						
+				docker rmi <exising_Image_name>
+		
+				docker rmi -f <exising_Image_name>
+			
+			
+		
+		- Port Mapping/Binding :::
+		
+			-p <host_port>:<container_port>
+			
+			docker run -it tomcat:8.0 bash
+			
+			
+			docker run -it -p 8085:8080 tomcat:8.0 
+		
+			docker run -it -p 8086:8080 tomcat:8.0 
+		
+
+
+Next ::::
+		
+		- Create Container Images:::
+		- Publish Image to Container Registry :::		
+		- Deploy using Kubernetes:::
+			
+		
+	- Docker Build :
+	
+		- To Create Container Images from the scratch using the Base Image.
+		- The Container Specifications, dependencies are defined using Dockerfile
+				
+		
+		vi Dockerfile 
+		
+		<>INS>>>
+		<>INS>>>		
+		<>INS>>>
+
+
+			Syntax:
+			
+				docker build -t loksaieta/tcswebapp:v1.0 .					# '.' denotes the Dockerfile reference
