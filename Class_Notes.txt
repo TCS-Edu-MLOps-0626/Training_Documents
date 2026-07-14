@@ -1031,3 +1031,237 @@ Day 5: 30th June 2026
 	3. GitHub-Action - CICD :::
 	
 	4. AWS Sagemaker AI :::
+
+
+######################
+Day 6: 1st July 2026
+######################	
+
+	- MLOps Packaging
+	
+		MLOPs Team ::::
+		
+			-> Automate end-to-end ML Model/Project Build, Test and Deployment & Monitoring
+			
+			Tools :::
+			
+				- git, github 			==> Version Control/Track the Source Code Changes 
+				
+				- DVC 					==> Version Control/Track the Dataset to train the model
+				
+				- Python 					
+					- Streamlit			==> Web Application Framework -> ML Project
+											- Web User Interface 
+											
+					- Fast API 			==> Develop the API used in the Model
+					
+				- MLFlow				==> To Experiment the Model
+				
+				- Docker 				==> Containerize the ML Model and its dependencies
+				
+				- DockerHub 			==> Register the ML Model Container Images 
+				
+				- AWS 
+					- AWS EC2 Instances ==> Setup - Dev, Build & Target Environment
+					
+					- AWS S3 Service 	==> To Maintain the Input Dataset & Model Artifacts
+					
+				- Kubernetes			==> To deploy the Model
+					(using Kubeadm/K3s/KIND/Minikube)
+					
+				- Kubeflow 				==> Extension to Kubernetes to Automate ML Workflow on Kubernetes
+				
+				- Monitoring 
+					- Prometheus Grafana ==> Infra-Structure Monitoring
+					- MLflow 			 ==> Model Monitoring
+					
+				- github-actions		
+										==> To Create end-to-end cicd pipeline to automate the Build and Deployments of ML Model
+										
+										
+										
+										
+		-> Login to AWS Console as a root user.
+		
+		
+		- AWS Services :
+		
+			--> IAM Service 			# To Create IAM User & IAM Roles 
+			
+			--> S3 Service 				# Create S3 Buckets to Maintain the Model Datasets & Model Artifacts 
+			
+			--> EC2 Service				# Create Virtual Machines(Dev,Build,Test,Production Environments)
+			
+			
+			
+			IAM User Profiles :
+			
+				root user 				# Used to Manage the AWS Account and other users.
+				
+				IAM User 				# Used to create AWS Services for Projects  
+										# Create Resources like EC2 Instances(VMs) / S3 Bucket as an IAM User.
+										
+				IAM User 				# Individual USers 			user1 (Developer)
+
+				IAM User Group 			# User Groups based on Roles/Environment/Teams
+	
+				IAM Policies			# Set of rules/Permissions		
+										# Assigned to the IAM Users/Groups
+				
+				IAM Roles 				# Define Set of rules/Permissions
+										# Assigned to the AWS Services
+										
+										# Attach this IAM Role to the EC2 Instance.
+										
+			
+			S3 ::::						# Create S3 Buckets to Maintain the Model Datasets & Model Artifacts 
+			
+										tcs-aws-s3bkt-0207  ==> s3://tcs-aws-s3bkt-0207
+										
+										
+									
+				
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "Statement1",
+			"Effect": "Allow",													# Allow / Deny 
+			"Principal": "*",													# Identify the IAM Users(root/mlopsuser1)
+			"Action": "s3:*",													# Action: get/list/write/delete
+			"Resource": "arn:aws:s3:::tcs-aws-s3bkt-0207/*"						# Name of the S2 Bucket
+		}
+	]
+}
+
+
+
+				
+										# Interact with S3 using AWS Cli Commands - recommended!
+			
+										# Console 
+				
+				
+	--> EC2 Service				# Create Virtual Machines(Dev,Build,Test,Production Environments)	:::	
+
+			--> EC2 Instance	# To Setup Build Environment 
+								# Create an EC2 Instance with IAM Role attached.
+								# Setup Security Group - Inbound Rules. 
+								# Setup MobaXTerm/Putty on Local Machine to access s3 bucket and EC2 Instances 												
+			--> Access EC2 Instance :
+
+								- Using MobaXTerm/Putty (Windows User)
+								- Use Terminal 			(Windows/Mac/Linix User)
+								
+								
+				# Login to EC2 Instance :
+				
+					- sudo -i 
+					
+					- apt update -y
+					
+				
+					# Setup AWS Cli on the EC2 Instance 		# Used to access S2 Bucket 
+						
+
+						# To Setup AWS CLI ::::
+
+						sudo apt install -y unzip curl
+
+						# Download AWS CLI v2
+						curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+						# Unzip installer
+						unzip awscliv2.zip
+
+						# Install AWS CLI
+						sudo ./aws/install
+
+						# Verify Installation
+						aws --version
+
+					$ aws s3 ls 					# Get the list of s3 bucket - to quickly check for s3 access from EC2 Instance.
+						
+		
+	--> Install MLOps related tools :::
+
+			git 
+			docker 
+			python 
+			create virtual environment using python 
+				- DVC  
+				- Streamlit						# Tool To creat UI for for ML Model 
+				- Fast-API 						# Tool To creat API for for ML Model 
+			
+
+			# install git,python,docker	on VM Level 
+			
+				sudo apt install -y \
+					  python3.12 python3.12-venv python3-pip
+
+
+				##sudo apt install -y python3 python3-venv python3-pip
+				
+				##python 3.14.4 -m venv loksai-venv
+				
+				##source loksai-venv/bin/activate
+
+				Create Virtual Environment ::::
+				
+						python3.12 -m venv loksai-venv
+
+						source loksai-venv/bin/activate
+
+					  
+				sudo apt install docker.io -y
+				
+				
+	- Environment:
+	
+		Dev 			--> 	Owned by the Developers 
+		
+								- Create ML Model Web Interface using Streamlit 
+								
+								- Create ML Model API using Fast-API
+			
+		
+		Build 			--> 	Owned by the DevOps/MLOps Team 
+		
+		Target Environments :
+		
+			- Test 				# Deploy the Package(Docker Image) & Execute 	
+		
+			- Prod 
+		
+
+######################
+Day 7: 2nd July 2026
+######################
+
+	- Project Repository
+	
+	- Working with ML Project
+	
+	- Package ML Model using Docker & Deploy using Kubernetes & kubeflow
+	
+	
+	- Core components of ML Project:
+	
+		- API 										# Backend - fast-api
+		
+		- UI 										# Web UI - streamlit
+		
+		- SRC -> Data_validation, Pre-Processing, Training
+	
+		- dvc .yaml
+		
+		- docker ***
+		
+		- K8s ***
+		
+		- github-workflow ****
+		
+		- requirement.txt
+		
+		
+	- DockerHub Account: https://hub.docker.com/
