@@ -1850,3 +1850,115 @@ Day 9: 15th July 2026
 Next :::
 
 		- Setup Kubernetes Architecture:
+
+
+######################
+Day 10: 16th July 2026
+######################	
+		
+	- Kubernetes Terminologies ::	
+	
+		- Kubernetes Cluster	# Is the collection of Worker nodes.
+		
+		
+			Kubernetes_Master(VM)		# To Create and Schedule the Pods
+			
+				Kubernetes_WorkerNode1	# To execute the Application Pods
+				Kubernetes_WorkerNode2		
+				Kubernetes_WorkerNode3				
+
+		- Pod					# Is an atomic unit of scheduling on Kubernetes
+		
+		- Container Images :	
+			- It is a static file(Non-Executable) that define the application properties, and the dependencies to create container 
+			- It composed of various Layers of Instructions.
+			- It is created using Dockerfile.
+			
+		- Containers		:	
+			- Container are the executable units of the Container Images
+			
+		- Container Registry:
+			- Used to Version Control and Maintain the Container Images 
+			- Using DockerHub 
+			
+			
+		- Kubectl 				# Command Line Utility - To interact with Kubernetes Master. 
+		
+		
+		- Manifest Files 		# Application Configuration File => *.yaml / *.json 
+
+		
+	- Setup Open-Source Kubernetes Architecture: :::
+
+		-> Single Node Architecture (PoC / Learning)
+			- Minikube/K3ind/Ks 			
+			
+		-> Multi Node Architecture	(Prod Implementations)		
+			- kubeadm Utility
+			
+			
+	- Setup the Managed Kubernetes Architecture: :::	
+	
+		AWS 		- ECS / ECR / EKS 
+		
+		Azure 		- ACS / ACR / AKS 
+		
+		GCP 		- GCE / GCR / GKE
+		
+		
+		Kubernetes_Master(VM)		# To Create and Schedule the Pods		
+			Kubernetes_WorkerNode1(VM)	# To execute the Application Pods
+			Kubernetes_WorkerNode2(VM)
+			
+	
+		Kubernetes Master and Worker Node Configurations :::
+
+			Installation of Kubernetes using Kubeadm :::	
+			
+					1. Launch 3 VMs on AWS Cloud (Ubuntu v24.04) --> (1 Master Node, 2 WorkerNodes)
+				
+				In all the Nodes(i.e., Master Node and WorkerNodes):
+				
+					2. Allow all traffic for all the nodes - just for this demo
+					3. Change the HostName of all the Nodes
+					4. Disable swap configuration in all the nodes
+					5. Install Docker in all the nodes *** (Optional)
+					6. Install CRI - 'Container-D' in all the nodes
+					7. Install Kubeadm,kubelet,kubectl 
+					8. Enable Kubelet	
+				   
+				Only on Master Node:
+				
+					9. Execute Kubeadm Init Command 		# To initialize Kubernetes Master Node
+					10. Enable user Access to Kubernetes
+					11. Install flannel Network plugins for kubeproxy
+
+				Only on WorkerNodes:		
+				
+					12. Execute Kubeadm Join Command 		# To attach the Worknodes with Kubernetes Master Node.
+		
+		
+		
+	- Kubectl Commands:::
+	
+		- kubectl get nodes 
+		
+		- kubectl get pods 
+	
+		- kubectl get pods --all-namespaces 
+		
+		
+	- Kubernetes Manifest file ::::
+	
+		- Created by the developers/Kubernetes Associates
+		
+		- Define the properties of the pods 
+		
+		
+	- Create Docker Images & Deploy on Kubernetes Cluster.
+		
+		
+		
+Next :::
+
+	- Create Deployment Controller Object :::
