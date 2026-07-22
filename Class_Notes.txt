@@ -2520,4 +2520,61 @@ jobs:
 		Setup Kubeflow to deploy ML Projects on Kubernetes 
 		Promethus & Grafana 
 		Kubernetes Dashboards 
+
+
+
+#######################
+Day 13: 22nd July 2026
+#######################	
+
+	CI-CD using GitHub-Actions:
+
+		-> github managed runner 
 		
+		-> Self-hosted action runner 
+		
+		
+	- Continuous Monitoring :::
+	
+		-> To Ensure High Availability of the resources during prod implementations.
+		
+		-> Used to maintain the Business Continuity
+		
+		
+		- Infra-Structure Perspectives :::
+		
+			- used to monitor Servers --> CPU/Memory
+			
+			- Monitoring Tools/Service Architecture ::::
+			
+				- Understand the Architecture
+				
+				- Prepare the Monitoring servicess
+
+				- Deploy to Prod 
+				
+
+			- Prometheus Grafana / Dynatrace / TestNG, Seleniums
+			
+
+
+		- Developers' Perspective :
+		
+			- Application Monitoring 
+			
+			- Datadog, App Dynamics 
+			
+	- Setup Prometheus_Grafana using Helm on Kubernetes
+	
+	
+	- Prometheus Time Series Database ::
+		
+		- Handled by the PromQL
+		
+		
+
+Next:
+
+	Kubernetes Dashboards 
+	Kubeflow to Deploy MLProject on Kubernetes 
+	
