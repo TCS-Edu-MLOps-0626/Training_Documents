@@ -2578,3 +2578,141 @@ Next:
 	Kubernetes Dashboards 
 	Kubeflow to Deploy MLProject on Kubernetes 
 	
+
+	
+#######################
+Day 14: 23rd July 2026
+#######################		
+
+	Kubeflow to Deploy MLProject on Kubernetes 	
+	
+	https://www.kubeflow.org/docs/components/pipelines/
+
+What is Kubeflow?
+Kubeflow is an open-source project that contains a curated set of tools and frameworks. The primary goal of Kubeflow is to make it easy to develop, deploy, and manage portable, scalable machine learning workflows. 
+
+Kubeflow is built on top of Kubernetes, an open-source platform for running and orchestrating containers. Kubernetes is constructed to run consistently across different environments, which is key to how Kubeflow operates. Kubeflow is designed to let Kubernetes do what it is good at, allowing you to focus on defining and running ML workflows, including managing data, running notebooks, training models, and serving them. 
+
+Kubeflow evolved from Google’s internal project called TensorFlow Extended.
+
+
+Kubeflow is a platform for data scientists and machine learning engineers containing the best of both worlds’ functionalities. Data scientists can use Kubeflow to experiment with ML models and orchestrate their experiments on Kubernetes in the most efficient way. 
+	
+	Install and Configure Kubeflow Pipelines:
+	
+	
+	Data Validation 
+	
+	Pre-Processing 
+	
+	Train Model 
+	
+	
+	
+	Dev/Build 	- Install Kubeflow pipeline 
+	
+				- Create Virtual Environment 
+				
+				- Prepare the Kubeflow Project  --> *.py
+				- Generate *.yaml 	# Kubernetes Manifest File 
+				
+
+	Kubeflow Dashboard:
+	
+				- Kubernetes_Master --> configure kubeflow pipeline 
+				
+				- Using port mapping expose the kubeflow pods to internet 
+	
+				- Upload *.yaml to Kubeflow Dashboard for deployment.
+				
+				- Deployed to Kubernetes 
+
+
+STAGE 1 - Setup K3s :
+
+Launch EC2 Instance :
+
+	t2.large / t2.xlarge
+	
+	50G EBS Volume 
+
+
+sudo apt update && sudo apt upgrade -y
+
+curl -sfL https://get.k3s.io | sh -
+
+kubectl get nodes
+
+#Add Swap
+
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
+
+
+STAGE 2 — Install Kubeflow Pipelines
+
+#Create namespace
+
+kubectl create ns kubeflow
+
+#Install Kubeflow Pipelines
+
+kubectl apply -k \
+github.com/kubeflow/pipelines/manifests/kustomize/cluster-scoped-resources
+
+Then
+
+kubectl apply -k \
+github.com/kubeflow/pipelines/manifests/kustomize/env/dev
+
+Wait for pods
+
+kubectl get pods -n kubeflow
+
+When all pods Running.
+
+Access Kubeflow UI
+
+Port forward
+
+kubectl port-forward --address 0.0.0.0 -n kubeflow svc/ml-pipeline-ui 8080:80
+
+
+Open
+
+http://<Public_IP>:8080
+
+Kubeflow dashboard appears.
+
+
+
+
+sudo apt update
+sudo apt install -y python3-venv python3-pip python3-full
+
+
+python3 -m venv mlops-env
+source mlops-env/bin/activate
+
+pip install kfp==2.8.0
+
+
+Next:::
+
+	- MLOps on Cloud :::
+	
+		AWS Sagemaker-AI - Fully Managed AWS Service.
+		
+			--> Use cases of AWS Sagemaker-AI 
+			
+			
+	- 		
+	- MLOps Project ::: (Tueday)
+	
+		- 
+		
